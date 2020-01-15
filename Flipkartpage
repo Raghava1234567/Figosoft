@@ -1,3 +1,27 @@
 Package com.hi.qa.Flipkartpage;
 import com.hi.qa.base.TestBase;
-public 
+public class FlipkartPage extends TestBase{
+
+@FindBy(id="//*[@id="twotabsearchtextbox"]")
+WebElement SearchBar;
+@FindBy(cssSelector="//input[@type='submit'][@class='nav-input']")
+WebElement Search;
+@FindBy(xpath="//*[text()='Apple iPhone 11 (64GB) - Yellow']")
+WebElement iphone;
+@FindBy(id="//*[@id="priceblock_ourprice"]")
+WebElement Price;
+public SearchBar()
+{
+SearchBar.sendkeys("iPhone XR (64GB) - Yellow");
+}
+public Search()
+{
+Search.click();
+}
+public iphone()
+{
+iphone.click();
+}
+public price()
+price.getPrice();
+}
