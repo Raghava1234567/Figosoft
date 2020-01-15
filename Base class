@@ -1,0 +1,31 @@
+Package com.hi.qa.base;
+public class TestBase{
+public static WebDriver driver;
+public static Properties prop;
+public TestBase(){
+try{
+prop = new Properties();
+FileInputStream ip =new FileInputStream("/usr/raghav/java/config.properties");
+prop.load(ip);
+}
+catch(FileNotFoundException e)
+{
+e.PrintStackTrace();
+}catch(IOException e){
+e.PrintStackTrace();
+}
+}
+public static void initialization(){
+String browserName =prop.getProperty("browser");
+if(browserName.equals("chrome"){
+System.setProperty("WebDriver.chrome.driver",""C:\Program Files (x86)\Google\Chrome\Application");
+driver =new ChromeDriver();
+}elseif(browserName.equals("FF")){
+System.setProperty("WebDriver.chrome.driver",""C:\Program Files (x86)\Firefox\Application");
+driver =new FirefoxDriver();
+}
+driver.manage().window().maximize();
+driver.manage().deleteAllCookies();
+driver.manage().timeOuts().pageLoadTimeOut(20,TimeUnit.SECONDS);
+driver.manage().timeOuts().implicitlyWait(10,TimeUnit.SECONDS);
+}
