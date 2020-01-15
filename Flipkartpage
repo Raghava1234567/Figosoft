@@ -1,2 +1,3 @@
-package com..qa.pages;
-import com
+Package com.hi.qa.Flipkartpage;
+import com.hi.qa.base.TestBase;
+public 
