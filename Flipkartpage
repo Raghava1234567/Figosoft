@@ -25,3 +25,4 @@ iphone.click();
 public price()
 price.getPrice();
 }
+
